@@ -11,23 +11,8 @@ function sum(...args) {
 };
 
 function compareArrays(arr1, arr2) {
-  let result;
-  if (arr1.length == 0 && arr2.length == 0) {
-    result = true;
-  } else if (arr1.length === arr2.length &&
-            Array.isArray(arr1) &&
-            Array.isArray(arr2)) {
-    arr1.forEach((iArray1) => arr2.forEach((iArray2) => {
-      if (iArray1 === iArray2) {
-        result = true;
-    } else {
-      result = false;
-    };
-    }));
-  } else {
-    result = false;
-  };
-  return result;
+  return (arr1.length == arr2.length) && arr1.every(function(element, index) {
+    return element === arr2[index]});
 };
 
 function memorize(fn, limit) {
